@@ -1,0 +1,89 @@
+<!--<html>
+  <head></head>
+  <body>
+
+<input [(ngModel)]="searchText"  placeholder="search text goes here"/>
+<div>
+  </div>
+<ul >
+  
+
+    <div *ngFor="let c of characters | search : 'TaskId':searchText ">
+      {{c.TaskId}}
+    </div>
+  </ul>
+  </body>
+</html>-->
+
+<html>
+  <head></head>
+    <body>
+        <div class="form-group"><br><br>
+            
+            <label i18n="@@label1">TASK: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" [(ngModel)]="q"  class="form-control input-normal" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label i18n="@@label2">PARENT TASK: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" [(ngModel)]="pa" class="form-control input-normal" id="parenttask" name="parenttaskname" />&nbsp;&nbsp;&nbsp;<br><br>
+            <label i18n="@@label3">TASK NAME: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" [(ngModel)]="t"  class="form-control input-normal" id="task" name="taskname" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label i18n="@@label4">START DATE: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text"  class="form-control input-normal" id="startdate" name="startdate" /><br><br>
+            <label i18n="@@label5">END DATE: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text"  class="form-control input-normal" id="enddate" name="enddate" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label i18n="@@label6">PRIORITY</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="range"  name="priority" id="range_weight" value="0" min="1" max="30" oninput="range_weight_disp.value = range_weight.value">
+            <input type="text" [(ngModel)]="p" class="form-control input-normal" type="text"  id="range_weight_disp"/><br><br>
+            <hr> 
+           
+            <h3>Task Details</h3>
+            <form [formGroup]="articleForm01" >
+              
+           <!--<div *ngFor="let item of allArticl;es | search:'task_id':q | search: 'ParentName':pa | 
+            search:'TaskName':t | search :'Priority':p"> -->
+            <div *ngFor="let c of characters | search:'task_id':q | search: 'ParentName':pa | 
+            search:'TaskName':t | search :'Priority':p">
+              
+              
+            <table>
+
+               
+             
+                <tr>
+                  <th i18n="@@label1" scope="col" >TASK</th>
+                  <th i18n="@@label2" scope="col">PARENT TASK</th>
+                  <th i18n="@@label3" scope="col">TASK NAME</th>
+                  <th i18n="@@label4" scope="col">PRIORITY</th>
+                  <th i18n="@@label5" scope="col">START DATE</th>
+                  <th i18n="@@label6" scope="col">END DATE</th>
+                </tr>
+                <tr>
+                  
+                    <td><input formControlName= "task_id" disabled="task_id" type="textarea" id="tid" value="{{c.task_id}}"/> </td>
+                    <td><input formControlName= "parentid" type="textarea" id= "pid" value="{{c.ParentName}}"></td>
+                    <td><input formControlName= "task" type="textarea" id="ta" value="{{c.TaskName}}"></td>
+                    <td><input formControlName= "priority" type="textarea" id="pri" value="{{c.Priority}}"></td>
+                    <td><input formControlName= "startdate" type="textarea" id="sd" value="{{c.StartDate}}"></td>
+                    <td><input formControlName= "enddate" type="textarea" id="ed" value="{{c.EndDate}}"></td>&nbsp;
+
+                 <!-- <td><input formControlName= "task_id" disabled="task_id" type="textarea" id="tid" value="{{item.task_id}}"/> </td>
+                  <td><input formControlName= "parentid" type="textarea" id= "pid" value="{{item.parentid}}"></td>
+                  <td><input formControlName= "task" type="textarea" id="ta" value="{{item.task}}"></td>
+                  <td><input formControlName= "priority" type="textarea" id="pri" value="{{item.priority}}"></td>
+                  <td><input formControlName= "startdate" type="textarea" id="sd" value="{{item.startdate}}"></td>
+                  <td><input formControlName= "enddate" type="textarea" id="ed" value="{{item.enddate}}"></td>&nbsp;-->
+                  <td><button (click)=updateTask(item) >EDIT</button></td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <td><button  (click)=taskEnd()>END TASK</button></td>
+                
+                </tr>
+               
+           
+            
+                
+              </table>
+            </div>
+            </form>
+          
+           </div>  
+    </body>
+  
+  </html>

@@ -1,0 +1,51 @@
+/* Full-width input fields */
+input[type=text]{
+    width: 20%;
+    padding: 5px;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    align-self: auto;
+    align-content: center
+   
+  }
+
+  input[type=button]{
+    width: 150%;
+    padding: 5px;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    background-color: cadetblue
+  }
+
+  button{
+    width: 150%;
+    padding: 5px;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    background-color: cadetblue
+  }
+ 
+
+  th{
+    display: -moz-inline-box;
+    color: cadetblue;
+    border: #f1f1f1
+  }
+
+  input[type=textarea]{
+    width: 90%;
+    padding: 5px;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+  label{
+    display: -moz-inline-box;
+    color: cadetblue;
+    border: #f1f1f1;
+    font: bolder;
+    font-display: inherit
+  }

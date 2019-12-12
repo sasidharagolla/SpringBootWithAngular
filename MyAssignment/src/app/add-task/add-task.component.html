@@ -1,0 +1,32 @@
+<html>
+  <head></head>
+    <body><br><br>
+        <div style="text-align: center">
+        
+          <form [formGroup]="articleForm" (ngSubmit)="createTask()">
+            <label i18n="@@label1">TASK: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <!--<label *ngIf="articleForm.get('task_id').invalid && processValidation" [ngClass] = "'error'"> Task-Id is required. </label>-->
+            <input class="form-control input-normal" formControlName="task_id" type="text" placeholder="task id" /><br><br>
+            <label i18n="@@label2">PARENT TASK: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input class="form-control input-normal" formControlName="parentid" type="text" placeholder="parent id"/><br><br> 
+            <label i18n="@@label3">TASK NAME: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input class="form-control input-normal" formControlName="task" type="text"  placeholder="task name" /><br><br>
+            <label i18n="@@label6">PRIORITY</label>&nbsp;&nbsp;
+            <input class="form-control input-normal" type="range" name="priority" id="range_weight" value="0" min="1" max="30" oninput="range_weight_disp.value = range_weight.value"/>
+            <input class="form-control input-normal" formControlName="priority" type="text"  id="range_weight_disp" placeholder="priority"/><br><br>
+            
+            <label i18n="@@label4">START DATE: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input formControlName="startdate" type="text" placeholder="start task"/><br><br>
+            <label i18n="@@label5">END DATE: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input class="form-control input-normal" formControlName="enddate" type="text" placeholder="end task"/><br><br>
+            <button >CREATE NEW TASK</button>&nbsp;&nbsp;&nbsp;&nbsp;
+            <button >RESET TASK</button>&nbsp;&nbsp;&nbsp;&nbsp;
+           
+          </form>  
+      </div>
+     
+    </body>
+  
+  </html>
+
+  
