@@ -17,7 +17,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<spring.data>2.0.2.RELEASE</spring.data>
+		<spring.data>2.1.0.RELEASE</spring.data>
 		<hibernate.manager>5.0.1.Final</hibernate.manager>
 	</properties>
 
